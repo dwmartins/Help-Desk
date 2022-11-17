@@ -1,5 +1,9 @@
 <?php 
 require_once "./src/controller/validador_acesso.php";
+include './src/controller/chamados.php';
+
+$chamado = new Chamados($mysql);
+$chamados = $chamado->exibirtodos() ;
 ?>
 
 <!DOCTYPE html>
@@ -30,23 +34,15 @@ require_once "./src/controller/validador_acesso.php";
         </div>
 
         <div class="descricao_chamado">
-            <div>
-                <h2>Titulo do chamado...</h2>
-                <h4>Categoria</h4>
-                <p>Descrição do chamado</p>
-            </div>
+            <?php foreach($chamados as $chamado) { ?>
 
-            <div>
-                <h2>Titulo do chamado...</h2>
-                <h4>Categoria</h4>
-                <p>Descrição do chamado</p>
-            </div>
+                <div>
+                    <h2><?php echo $chamado['titulo']; ?></h2>
+                    <h4><?php echo $chamado['categoria']; ?></h4>
+                    <p><?php echo nl2br($chamado['descricao']); ?></p>
+                </div>
 
-            <div>
-                <h2>Titulo do chamado...</h2>
-                <h4>Categoria</h4>
-                <p>Descrição do chamado</p>
-            </div>
+            <?php } ?>
         </div>
 
         <div class="btn_voltar">
