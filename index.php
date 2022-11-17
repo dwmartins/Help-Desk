@@ -12,8 +12,10 @@
 
 
    <nav>
-      <img src="./src/img/logo.png" alt="Logo">
-      <h2>Help Desk</h2>
+      <a href="index.php">
+         <img src="./src/img/logo.png" alt="Logo">
+         <h2>Help Desk</h2>
+      </a>
    </nav>
 
    <section class="tela_login">

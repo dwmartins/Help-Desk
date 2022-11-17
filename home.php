@@ -1,27 +1,25 @@
 <?php 
-
-   session_start();
-
-   if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
-      header('Location: ../../index.php?login=erro2');
-   }
-   
+require_once "./src/controller/validador_acesso.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
 
-    <link rel="stylesheet" href="./src/css/style.css">
+   <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
    <nav>
-      <img src="./src/img/logo.png" alt="Logo">
-      <h2>Help Desk</h2>
+      <a href="home.php">
+         <img src="./src/img/logo.png" alt="Logo">
+         <h2>Help Desk</h2>
+      </a>
+
+      <a href="./src/controller/logoff.php" class="btn_sair">SAIR</a>
    </nav>
 
    <section class="inicio">
@@ -33,13 +31,13 @@
 
          <div class="menu">
             <div class="itens">
-               <a href="#">
+               <a href="./abrir_chamado.php">
                   <img src="./src/img/formulario_abrir_chamado.png" alt="Inserir">
                </a>
             </div>
 
             <div class="itens">
-               <a href="#">
+               <a href="./consultar_chamado.php">
                   <img src="./src/img/formulario_consultar_chamado.png" alt="Consultar">
                </a>
             </div>
