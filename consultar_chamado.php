@@ -1,6 +1,7 @@
 <?php 
 require_once "./src/controller/validador_acesso.php";
-include './src/controller/chamados.php';
+require "./src/controller/conexao.php";
+include './src/controller/Chamados.php';
 
 $chamado = new Chamados($mysql);
 $chamados = $chamado->exibirtodos() ;

@@ -17,6 +17,14 @@ class Chamados
 
         return $chamados;
     }
+
+    // Adicionando conteudos no banco de dados
+    public function adicionaDados(string $titulo, string $categoria, string $descricao): void 
+    {
+        $insereChamado = $this->mysql->prepare('INSERT INTO chamados (titulo, categoria, descricao) VALUES (?,?,?);');
+        $insereChamado->bind_param('sss', $titulo, $categoria, $descricao);
+        $insereChamado->execute();
+    }
 }
 
 ?>

@@ -1,5 +1,14 @@
 <?php 
 require_once "./src/controller/validador_acesso.php";
+require "./src/controller/conexao.php";
+require "./src/controller/Chamados.php";
+require "./src/controller/redireciona.php";
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $chamado = new Chamados($mysql);
+    $chamado->adicionaDados($_POST['titulo'], $_POST['categoria'], $_POST['descricao']);
+    redireciona('./consultar_chamado.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,21 +38,21 @@ require_once "./src/controller/validador_acesso.php";
         </div>
 
         <div class="menu">
-            <form action="" class="form_abertura">
+            <form action="./abrir_chamado.php" method="POST" class="form_abertura">
                 <label for="">Titulo</label>
                 <input type="text" name="titulo" id="">
 
                 <label for="">Categoria</label>
-                    <select name="" id="">
+                    <select name="categoria" id="">
                         <option value=""></option>
-                        <option value="">categoria 1</option>
-                        <option value="">categoria 1</option>
-                        <option value="">categoria 1</option>
-                        <option value="">categoria 1</option>
+                        <option value="internet">Internet</option>
+                        <option value="login">Login</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="outros">Outros</option>
                     </select>
 
                 <label for="">Descrição</label>
-                <textarea name="" id="" cols="30" rows="5"></textarea>
+                <textarea name="descricao" id="" cols="30" rows="5"></textarea>
 
                 <div class="botoes_abertura">
                     <a href="./home.php">Voltar</a>
