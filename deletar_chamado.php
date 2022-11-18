@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section class="inicio">
         <div class="deletar_chamado">
             <div class="titulo_menu">
-                <p>Deseja finalizar o chamdo?</p>
+                <p>Deseja finalizar o chamado?</p>
             </div>
 
             <form action="./deletar_chamado.php" method="POST">
