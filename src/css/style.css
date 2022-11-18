@@ -6,6 +6,8 @@
     --cinzaClaro2: #f0f3ff;
     --amarelo: #FFC009;
     --amareloEscuro: #d8a40a;
+    --vermelho: #fa3535;
+    --vermelhoEscuro: #cc2929;
 }
 
 * {
@@ -128,7 +130,6 @@ nav h2 {
 .inicio > div {
     width: 95%;
     max-width: 600px;
-    background-color: blue;
     border: 1px solid var(--cinzaClaro);
     border-radius: 5px;
 }
@@ -239,6 +240,8 @@ nav h2 {
 
 .chamados_abertos > div {
     width: 95%;
+    height: 90%;
+    overflow-y: scroll;
     max-width: 900px;
     border: 1px solid var(--cinzaClaro);
     background-color: var(--cinzaClaro2);
@@ -269,7 +272,7 @@ nav h2 {
     padding: 10px;
 }
 
-.chamados_abertos a {
+.btn_voltar a {
     width: 48%;
     height: 30px;
     background-color: var(--amarelo);
@@ -282,14 +285,87 @@ nav h2 {
     font-size: 14px;
 }
 
-.chamados_abertos a:hover {
+.btn_voltar a:hover {
     background-color: var(--amareloEscuro);
+    transition: 0.5s;
+}
+
+.btns_consulta {
+    display: flex;
+    gap: 10px;
+}
+
+.btns_consulta .editar {
+    background-color: var(--verde);
+    padding: 5px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btns_consulta .editar:hover{
+    background-color: var(--verdeEscuro);
+    transition: 0.5s;
+}
+
+.btns_consulta .finalizar {
+    background-color: var(--vermelho);
+    padding: 5px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btns_consulta .finalizar:hover {
+    background-color: var(--vermelhoEscuro);
     transition: 0.5s;
 }
 /* FIM CONSULTA CHAMADO */
 
-/* VALIDAÇÕES */
+/* PAGINA DELETAR CHAMADO */
+.deletar_chamado form{
+    background-color: var(--cinzaClaro2);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+}
 
+.deletar_chamado form a {
+    width: 40%;
+    height: 30px;
+    background-color: var(--amarelo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: var(--cinzaEscuro);
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.deletar_chamado form a:hover {
+    background-color: var(--amareloEscuro);
+    transition: 0.5s;
+}
+
+.deletar_chamado button {
+    background-color: var(--vermelho);
+    border: none;
+    width: 40%;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+.deletar_chamado button:hover {
+    background-color: var(--vermelhoEscuro);
+    transition: 0.5s;
+}
+/* FIM DELETAR CHAMADO */
+
+/* VALIDAÇÕES */
 .erro_login {
     color: #fa3535;
     margin-top: 15px;

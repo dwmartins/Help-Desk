@@ -38,9 +38,14 @@ $chamados = $chamado->exibirtodos() ;
             <?php foreach($chamados as $chamado) { ?>
 
                 <div>
-                    <h2><?php echo $chamado['titulo']; ?></h2>
-                    <h4><?php echo $chamado['categoria']; ?></h4>
-                    <p><?php echo nl2br($chamado['descricao']); ?></p>
+                    <h2><?= $chamado['titulo']; ?></h2>
+                    <h4><?= $chamado['categoria']; ?></h4>
+                    <p><?=  nl2br($chamado['descricao']); ?></p>
+
+                    <div class="btns_consulta">
+                        <a class="editar" href="./editar_chamado.php?id=<?= $chamado['id']; ?>">Editar</a>
+                        <a class="finalizar" href="./deletar_chamado.php?id=<?= $chamado['id']; ?>">Finalizar</a>
+                    </div>
                 </div>
 
             <?php } ?>
